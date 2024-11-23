@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookMark</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQww73hGEDV9YV-kWC0FmJL1baRGz16NrBdMtje-ZrZ-Jeys8nYEoAKBs4pXF3omZhQ5s4&usqp=CAU">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Css/main.css">
+</head>
+
+<body>
+    <div class="backgroud position-relative">
+        <div class="layer">
+            <div class="container h-100 d-flex align-items-center justify-content-center">
+                <div>
+                    <h1 id="element" class="element">Bookmarker</h1>
+                </div>
+            </div>
+        </div>
+        <div class="icon rounded-end  d-flex align-items-center justify-content-center "  ><a href="#searchinput"><i class="fa-solid fa-magnifying-glass"></i></a></div>
+    </div>
+
+    <div class="w-100 d-flex justify-content-center pt-5 ">
+        <div class="input-group flex-nowrap w-50  " id="searchinput">
+            <span class="input-group-text bg-black" id="addon-wrapping"><i
+                    class="fa-solid fa-magnifying-glass fa-spin-pulse" style="color: #ffffff;"></i></span>
+            <input oninput="searchData()" type="text" id="searchinput" class="form-control " placeholder="Search"
+                aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+    </div>
+    <section class="container d-flex flex-column text-center pt-5">
+
+
+        <div>
+            <div class="booklast">
+                <div class="d-flex flex-row booklast w-100 justify-content-center align-items-center  ">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <h2 class="fs-1">Bookmark your favorite sites</h2>
+                    <i class="fa-solid fa-bookmark"></i>
+                </div>
+                <div>
+                    <div class="d-flex flex-row  align-items-center">
+                        <i class="fa-solid fa-link"></i>
+                        <p class="ps-4"> Site URL</p>
+                    </div>
+                    <div>
+                        <div class="form-floating mb-3">
+                            <input oninput="validationweb()" type="text" class="form-control" id="SiteURL"
+                                placeholder=" Bookmark  Name">
+                            <label for="SiteURL">Site URL</label>
+                        </div>
+                        <p id="msgurl" class=" fs-6 masssage p-1  w-100 d-none">
+                            Please ensure that the URL you enter follows the correct format. It should look something
+                            like this:
+                            http://www.example.com or https://example.com
+                        </p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="d-flex flex-row  align-items-center">
+                        <i class="fa-solid fa-book"></i>
+                        <p class="ps-3"> Site Name</p>
+                    </div>
+                    <div>
+                        <div class="form-floating mb-3">
+                            <input oninput="validationname()" type="text" class="form-control" id="SiteName"
+                                placeholder="Website URL">
+                            <label for="SiteName">BookMark Name</label>
+                        </div>
+                        <p id="msgName" class=" fs-6 masssage p-1  w-auto d-none">
+                            It must start with a letter, be 3 to 20 characters long, and can only contain letters,
+                            numbers, hyphens,
+                            or underscores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 bg- d-flex align-items-center justify-content-center ">
+                <button onclick="AddLink()" class="btn btn3 btn-primary w-25 p-2" type="button">Submit</button>
+            </div>
+        </div>
+        <div class="pt-5">
+            <table class="table table-dark ">
+                <thead>
+                    <tr>
+                        <th scope="col" class="bg-gradient tab ">Index</th>
+                        <th scope="col" class="bg-gradient tab ">Website Name</th>
+                        <th scope="col" class="bg-gradient tab ">Visit</th>
+                        <th scope="col" class="bg-gradient tab ">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="Tabledata">
+                    <!-- <tr>
+                    <th scope="row">Index_nuber</th>
+                    <td>Name</td>
+                    <td> <a href="https://fontawesome.com/icons/link?f=classic&s=solid"> <button class="btn btn-primary" type="button"> <i class="fa-solid fa-eye"></i> Visit</button></a>
+                    </td>
+                    <td> <button class="btn btn-danger" type="button"> <i class="fa-solid fa-trash"></i>Delete</button>
+                    </td>
+                  </tr> -->
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        const typed = new Typed('.element', {
+            strings: ['BookMaker <i class="fa-solid fa-book"></i>', 'For u <i class="fa-regular fa-face-smile"></i>'],
+            typeSpeed: 150,
+            backSeed: 150,
+            loop: true
+        });
+    </script>
+    <script src="./Js/bootstrap.min.js"></script>
+    <script src="./Js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
